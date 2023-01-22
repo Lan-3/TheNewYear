@@ -1,0 +1,394 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>贺新岁</title>
+ 
+<style>
+    .deng-box {
+        position: fixed;
+        top: -40px;
+        right: -20px;
+        z-index: 9999;
+        pointer-events: none;
+    }
+
+    .deng-box1 {
+        position: fixed;
+        top: -30px;
+        right: 10px;
+        z-index: 9999;
+        pointer-events: none;
+    }
+
+    .deng-box1 .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 5s infinite ease-in-out;
+        box-shadow: -5px 5px 30px 4px rgba(252, 144, 61, 1);
+    }
+
+    .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3s infinite ease-in-out;
+        box-shadow: -5px 5px 50px 4px rgba(250, 108, 0, 1);
+    }
+
+    .deng-a {
+        width: 100px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.1);
+        margin: 12px 8px 8px 10px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03;
+    }
+
+    .deng-b {
+        width: 45px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, 0.1);
+        margin: -2px 8px 8px 26px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03;
+    }
+
+    .xian {
+        position: absolute;
+        top: -20px;
+        left: 60px;
+        width: 2px;
+        height: 20px;
+        background: #dc8f03;
+    }
+
+    .shui-a {
+        position: relative;
+        width: 5px;
+        height: 20px;
+        margin: -5px 0 0 59px;
+        -webkit-animation: swing 4s infinite ease-in-out;
+        -webkit-transform-origin: 50% -45px;
+        background: #ffa500;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .shui-b {
+        position: absolute;
+        top: 14px;
+        left: -2px;
+        width: 10px;
+        height: 10px;
+        background: #dc8f03;
+        border-radius: 50%;
+    }
+
+    .shui-c {
+        position: absolute;
+        top: 18px;
+        left: -2px;
+        width: 10px;
+        height: 35px;
+        background: #ffa500;
+        border-radius: 0 0 0 5px;
+    }
+
+    .deng:before {
+        position: absolute;
+        top: -7px;
+        left: 29px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        z-index: 999;
+        border-radius: 5px 5px 0 0;
+        border: solid 1px #dc8f03;
+        background: #ffa500;
+        background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+    }
+
+    .deng:after {
+        position: absolute;
+        bottom: -7px;
+        left: 10px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        margin-left: 20px;
+        border-radius: 0 0 5px 5px;
+        border: solid 1px #dc8f03;
+        background: #ffa500;
+        background: linear-gradient(to right, #dc8f03, #ffa500, #dc8f03, #ffa500, #dc8f03);
+    }
+
+    .deng-t {
+        font-family: 华文行楷, Arial, Lucida Grande, Tahoma, sans-serif;
+        font-size: 3.2rem;
+        color: #dc8f03;
+        font-weight: bold;
+        line-height: 85px;
+        text-align: center;
+    }
+
+    .night .deng-t,
+    .night .deng-box,
+    .night .deng-box1 {
+        background: transparent !important;
+    }
+
+    @-moz-keyframes swing {
+        0% {
+            -moz-transform: rotate(-10deg)
+        }
+
+        50% {
+            -moz-transform: rotate(10deg)
+        }
+
+        100% {
+            -moz-transform: rotate(-10deg)
+        }
+    }
+
+    @-webkit-keyframes swing {
+        0% {
+            -webkit-transform: rotate(-10deg)
+        }
+
+        50% {
+            -webkit-transform: rotate(10deg)
+        }
+
+        100% {
+            -webkit-transform: rotate(-10deg)
+        }
+    }
+html, body{
+   padding:0px;
+   margin:0px;
+   background:#222;
+   font-family: 'Karla', sans-serif;
+   color:#FFF;
+   height:100%;
+   overflow:hidden;
+}
+h1{
+   z-index: 1000;
+   position:fixed;
+   top:50%;
+   left:50%;
+   transform:translateX(-50%) translateY(-100%);
+   font-size:58px;
+   border:2px solid #FFF;
+   padding:7.5px 15px;
+   background:rgba(0, 0, 0, 0.5);
+   border-radius:3px;
+   overflow:hidden;
+}
+span{ 
+   position:relative;
+   display:inline-block;
+   animation: drop 0.75s;
+}
+canvas {
+    width:100%;
+    height:100%;
+}
+ 
+@keyframes drop {
+   0% { 
+      transform: translateY(-100px);
+      opacity: 0;
+   }
+   
+   90% {
+      opacity: 1;
+      transform:translateY(10px);
+   }
+   100% {
+      transform:translateY(0px;)
+   }
+}
+</style>
+</head>
+<body>
+    <div class="deng-box denglong">  <!--灯笼“节”-->
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b">
+                    <div class="deng-t">节</div>
+                </div>
+            </div>
+            <div class="shui shui-a">
+                <div class="shui-c"></div>
+                <div class="shui-b"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="deng-box1 denglong"><!--灯笼“春”-->
+        <div class="deng">
+            <div class="xian"></div>
+            <div class="deng-a">
+                <div class="deng-b">
+                    <div class="deng-t">春</div>
+                </div>
+            </div>
+            <div class="shui shui-a">
+                <div class="shui-c"></div>
+                <div class="shui-b"></div>
+            </div>
+        </div>
+    </div>
+ 
+<canvas></canvas>
+ 
+<h1>新年快<span>乐</span></h1>
+
+ 
+<script type="text/javascript">
+var ctx = document.querySelector('canvas').getContext('2d')
+ctx.canvas.width = window.innerWidth
+ctx.canvas.height = window.innerHeight
+ 
+var sparks = []
+var fireworks = []
+var i = 20; while(i--) {
+   fireworks.push(
+      new Firework(Math.random()*window.innerWidth, window.innerHeight*Math.random())
+   )
+}
+ 
+render()
+function render() {
+   setTimeout(render, 1000/60)
+   ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+   ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+   for(var firework of fireworks) {
+      if(firework.dead) continue
+      firework.move()
+      firework.draw()
+   }
+   for(var spark of sparks) {
+      if(spark.dead) continue
+      spark.move()
+      spark.draw()
+   }
+   
+   if(Math.random() < 0.05) {
+      fireworks.push(new Firework())
+   }
+}
+ 
+function Spark(x, y, color) {
+   this.x = x
+   this.y = y
+   this.dir = Math.random() * (Math.PI*2)
+   this.dead = false
+   this.color = color
+   this.speed = Math.random() * 3 + 3;
+   this.walker = new Walker({ radius: 20, speed: 0.25 })
+   this.gravity = 0.25
+   this.dur = this.speed / 0.1
+   this.move = function() {
+      this.dur--
+      if(this.dur < 0) this.dead = true
+      
+      if(this.speed < 0) return
+      if(this.speed > 0) this.speed -= 0.1
+      var walk = this.walker.step()
+      this.x += Math.cos(this.dir + walk) * this.speed
+      this.y += Math.sin(this.dir + walk) * this.speed
+      this.y += this.gravity
+      this.gravity += 0.05
+      
+   }
+   this.draw = function() {
+      drawCircle(this.x, this.y, 3, this.color)
+   }
+}
+ 
+function Firework(x, y) {
+   this.xmove = new Walker({radius: 10, speed: 0.5})
+   this.x = x || Math.random() * ctx.canvas.width
+   this.y = y || ctx.canvas.height
+   this.height = Math.random()*ctx.canvas.height/2
+   this.dead = false
+   this.color = randomColor()
+   
+   this.move = function() {
+      this.x += this.xmove.step()
+      if(this.y > this.height) this.y -= 1; 
+      else this.burst()
+      
+   }
+   this.draw = function() {
+      drawCircle(this.x, this.y, 1, this.color)
+   }
+   this.burst = function() {
+      this.dead = true
+      var i = 100; while(i--) sparks.push(new Spark(this.x, this.y, this.color))
+   }
+}
+ 
+function drawCircle(x, y, radius, color) {
+   color = color || '#FFF'
+   ctx.fillStyle = color
+   ctx.fillRect(x-radius/2, y-radius/2, radius, radius)
+}
+ 
+function randomColor(){
+   return ['#6ae5ab','#88e3b2','#36b89b','#7bd7ec','#66cbe1'][Math.floor(Math.random() * 5)];
+}
+ 
+function Walker(options){
+   this.step = function(){
+      this.direction = Math.sign(this.target) * this.speed
+      this.value += this.direction
+      this.target
+         ? this.target -= this.direction
+         : (this.value)
+            ? (this.wander) 
+               ? this.target = this.newTarget() 
+               : this.target = -this.value
+            : this.target = this.newTarget()  
+      return this.direction
+   }
+      
+   this.newTarget = function() {
+      return Math.round(Math.random()*(this.radius*2)-this.radius)
+   }
+   
+   this.start = 0
+   this.value = 0
+   this.radius = options.radius
+   this.target = this.newTarget()
+   this.direction = Math.sign(this.target)
+   this.wander = options.wander
+   this.speed = options.speed || 1
+}
+</script>
+ 
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>适用浏览器：360、FireFox、Chrome、Opera、傲游、搜狗、世界之窗. 不支持Safari、IE8及以下浏览器。</p>
+ 
+</div>
+<script>document.write('<script src="//' + (location.host || 'localhost').split(':')[0] + ':35929/livereload.js?snipver=1"></' + 'script>')</script><script>document.addEventListener('LiveReloadDisconnect', function() { setTimeout(function() { window.location.reload(); }, 500); })</script></body>
+</html>
